@@ -1,0 +1,31 @@
+export interface Player {
+  id: string;
+  pin: string;
+  name: string;
+  avatar_url: string | null;
+  games_played: number;
+  games_won: number;
+  fastest_win_seconds: number | null;
+  created_at: string;
+}
+
+export interface GameState {
+  id: string;
+  status: "waiting" | "playing" | "finished";
+  board: unknown;
+  deck: unknown;
+  player_racks: Record<string, unknown>;
+  opened_players: string[];
+  current_turn_pin: string | null;
+  turn_started_at: string | null;
+  game_started_at: string | null;
+  winner_pin: string | null;
+  updated_at: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  sender_pin: string;
+  content: string;
+  created_at: string;
+}
